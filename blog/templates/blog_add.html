@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo edit</title>
+    <script src="//cdn.ckeditor.com/4.7.3/basic/ckeditor.js"></script>
+    <script src="./static/ckeditor/ckeditor.js"></script>
+    <!-- ./static/js/app.js -->
+    <style type="text/css">
+    	#id-content {
+    		/*text-align: center;*/
+    		/*width: 80%/*;*/
+			height: 400px;
+			border-radius: 5px;
+    	}
+    </style>
+</head>
+<body>
+    <div>
+        <form action="{{ url_for('.add') }}" method="post">
+            <input type="text" name="title" >
+            <!-- <input id="id-content" type="text" name="content" > -->
+             <textarea name="content" id="id-content" rows="10" cols="80">
+                This is my textarea to be replaced with CKEditor.
+              </textarea>
+               <script>
+                    // 用CKEditor替换<textarea id="editor1">
+                    // 使用默认配置
+                    CKEDITOR.replace('content');
+                </script>
+            <button>上传</button>
+        </form>
+    </div>
+</body>
+</html>
